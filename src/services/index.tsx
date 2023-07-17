@@ -51,7 +51,7 @@ const ServicesSection: NextPage = () => {
                     <div>
                         <p className="text-xs text-gray-400">Stand</p>
                         <p className="text-xs text-gray-400 text-end ">
-                            {formatDate(systemStatus?.datetime)}
+                            {systemStatus?.datetime}
                         </p>
                     </div>
                 </div>
