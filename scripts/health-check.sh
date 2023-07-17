@@ -1,11 +1,6 @@
 #!/bin/bash
 
-commit=false # was true, always false for now
-origin=$(git remote get-url origin)
-if [[ $origin == *statsig-io/statuspage* ]]
-then
-  commit=false
-fi
+commit=true
 
 declare -a KEYSARRAY
 declare -a URLSARRAY
@@ -61,8 +56,8 @@ done
 if [[ $commit == true ]]
 then
   echo "committing logs"
-  git config --global user.name 'fettle-mehatab'
-  git config --global user.email 'fettle.mehatab@gmail.com'
+  git config --global user.name 'gripstatus'
+  git config --global user.email 'statuspage@t8lab.com'
   git add -A --force public/status/
   git commit -am '[Automated] Update Health Check Logs'
   git push
