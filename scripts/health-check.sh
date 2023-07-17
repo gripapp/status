@@ -1,6 +1,11 @@
 #!/bin/bash
 
 commit=true
+origin=$(git remote get-url origin)
+if [[ $origin == *statsig-io/statuspage* ]]
+then
+  commit=false
+fi
 
 declare -a KEYSARRAY
 declare -a URLSARRAY
@@ -18,6 +23,7 @@ echo "***********************"
 echo "Starting health checks with ${#KEYSARRAY[@]} configs:"
 
 mkdir -p logs
+touch logs/.keep
 
 for (( index=0; index < ${#KEYSARRAY[@]}; index++ ))
 do
@@ -57,7 +63,7 @@ if [[ $commit == true ]]
 then
   echo "committing logs"
   git config --global user.name 'gripstatus'
-  git config --global user.email 'statuspage@t8lab.com'
+  git config --global user.email 'gripstatus@getgrip.de'
   git add -A --force public/status/
   git commit -am '[Automated] Update Health Check Logs'
   git push
