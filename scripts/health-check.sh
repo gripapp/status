@@ -1,6 +1,6 @@
 #!/bin/bash
 
-commit=true
+commit=false # was true, always false for now
 origin=$(git remote get-url origin)
 if [[ $origin == *statsig-io/statuspage* ]]
 then
