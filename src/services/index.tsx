@@ -40,6 +40,12 @@ const ServicesSection: NextPage = () => {
         }
     }
 
+
+    let lastUpdate = systemStatus?.datetime 
+    if (lastUpdate === null) {
+        lastUpdate = new Date().toString();
+    }
+
     return (
         <div className='mt-10'>
             <div className="mx-px md:ml-80 md:mr-80 bg-white dark:bg-slate-800 rounded-xl card">
@@ -51,7 +57,6 @@ const ServicesSection: NextPage = () => {
                     <div>
                         <p className="text-xs text-gray-400">Stand</p>
                         <p className="text-xs text-gray-400 text-end ">
-                            {var lastUpdate = systemStatus?.datetime | new Date().toString()}
                             {formatDate(lastUpdate)}
                         </p>
                     </div>
