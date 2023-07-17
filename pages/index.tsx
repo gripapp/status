@@ -9,7 +9,9 @@ const Home: NextPage = () => {
       <div className="mt-20 absolute inset-0 bg-[url(/status/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
       <div className="w-full h-40 absolute bg-light-purple dark:purple dark:bg-black">
         <div className="sm:ml-0 ml-5 mr-0 mt-3 md:pl-80 md:pr-80 sm:w-full h-full bg-purple-500 dark:bg-black">
-          <Image src="/status/GRIP.png" className="h-5 max-w-16" alt="Grip" />
+          <div className="h-5 max-w-16">
+            <Image src="/status/GRIP.png" alt="Grip" />
+          </div>
         </div>
       </div>
       <div className='mt-20 w-full absolute overflow-scroll	'>
