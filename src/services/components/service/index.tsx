@@ -44,7 +44,7 @@ const ServiceItem: FunctionComponent<ServiceItemProps> = ({ item }) => {
                 <Icon />
                 <div className="w-full flex justify-between items-baseline">
                     <p className="ml-4 text-base font-semibold leading-6 text-gray-900">{item.name}</p>
-                    <p className='text-xs text-gray-400 items-baseline	self-baseline'> {calculateUpTime()}% operativ in den letzten 90 Tagen</p>
+                    <p className='text-xs text-gray-400 items-baseline	self-baseline'> {calculateUpTime()}% verfügbar in den letzten 90 Tagen</p>
                 </div>
 
             </div>

@@ -47,7 +47,7 @@ const IncidentsSection: NextPage = () => {
 											{incident.status === "closed" ? (
 												<div>
 													<p className="text-sm text-gray-500">
-														Der Vorfall wurde gelöst.
+														Dieser Vorfall wurde behoben.
 													</p>
 													<p className="text-sm text-gray-500">
 														{formatDate(incident.created_at)} -{" "}
