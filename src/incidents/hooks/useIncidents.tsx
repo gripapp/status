@@ -41,6 +41,9 @@ function devideMonthly(issues: any[]) {
 
     const incidents: MonthlyIncident[] = [];
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    if (navigator.language.substring(0, 2) === 'de') {
+        monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+    }
     Object.values(issues.reduce((r, date) => {
         const [year, month, day] = date.created_at.substr(0, 10).split('-');
         const key = `${year}_${month}`;
@@ -57,6 +60,5 @@ function devideMonthly(issues: any[]) {
 
     return incidents;
 }
-
 
 export default useIncidents;
