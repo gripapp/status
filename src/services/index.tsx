@@ -42,7 +42,7 @@ const ServicesSection: NextPage = () => {
                         <p className="ml-3 text-gray-900">{systemStatus?.title}</p>                        
                     </div>
                     <div>
-                        <p className="text-xs text-gray-400">Last updated</p>
+                        <p className="text-xs text-gray-400">Stand</p>
                         <p className="text-xs text-gray-400 text-end ">{systemStatus?.datetime}</p>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ const ServicesSection: NextPage = () => {
                         )
                     }
                 </div>
-                <p className="mt-10 sm:text-lg	text-base font-semibold leading-7 text-gray-900">Recent incident</p>
+                <p className="mt-10 sm:text-lg	text-base font-semibold leading-7 text-gray-900">Letzte Ereignisse</p>
                 <IncidentsSection />
             </div>
         </div >

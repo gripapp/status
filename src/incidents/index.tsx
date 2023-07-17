@@ -7,7 +7,7 @@ const IncidentsSection: NextPage = () => {
 	const [monthlyIncidents, isIncidentsLoading] = useIncidents();
 
 	const formatDate = (date: string) => {
-		return new Date(date).toLocaleString([], {
+		return new Date(date).toLocaleString(navigator.language, {
 			month: "short",
 			day: "numeric",
 			hour: "numeric",
