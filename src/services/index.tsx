@@ -10,7 +10,14 @@ import { Status } from '../utils/constants';
 const ServicesSection: NextPage = () => {
     const [data, isServicesLoading] = useServices();
     const {systemStatus, isLoading} = useSystemStatus();
-
+	const formatDate = (date: string) => {
+		return new Date(date).toLocaleString(navigator.language, {
+			month: "short",
+			day: "numeric",
+			hour: "numeric",
+			minute: "numeric",
+		});
+	};
     const Icon = () => {
         if (systemStatus?.status === Status.OPERATIONAL) {
             return <svg className="h-6 w-6 flex-none fill-sky-100 stroke-green-500 stroke-2">
@@ -43,7 +50,9 @@ const ServicesSection: NextPage = () => {
                     </div>
                     <div>
                         <p className="text-xs text-gray-400">Stand</p>
-                        <p className="text-xs text-gray-400 text-end ">{systemStatus?.datetime}</p>
+                        <p className="text-xs text-gray-400 text-end ">
+                            {formatDate(systemStatus?.datetime)}
+                        </p>
                     </div>
                 </div>
             </div>
