@@ -29,7 +29,7 @@ function useSystemStatus() {
                 
                 if (services.every((item) => item.status === "success")) {
                     setSystemStatus({
-                        title: "Voll funktionsfähig",
+                        title: "Verfügbar",
                         status: Status.OPERATIONAL,
                         datetime: services[0].date
                     });
