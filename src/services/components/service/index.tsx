@@ -34,7 +34,8 @@ const ServiceItem: FunctionComponent<ServiceItemProps> = ({ item }) => {
 
     const calculateUpTime = () => {
         let successCount = item.logs.filter((item)=> item.status === Status.OPERATIONAL).length
-        return Math.round((successCount * 100) / 90);
+        let totalWithoutUnknowns = item.logs.filter((item)=> item.status !== Status.UNKNOWN).length
+        return Math.round((successCount * 100) / totalWithoutUnknowns);
     }
 
     return (
@@ -43,7 +44,7 @@ const ServiceItem: FunctionComponent<ServiceItemProps> = ({ item }) => {
                 <Icon />
                 <div className="w-full flex justify-between items-baseline">
                     <p className="ml-4 text-base font-semibold leading-6 text-gray-900">{item.name}</p>
-                    <p className='text-xs text-gray-400 items-baseline	self-baseline'> {calculateUpTime()}% operational in last 90 days</p>
+                    <p className='text-xs text-gray-400 items-baseline	self-baseline'> {calculateUpTime()}% operativ in den letzten 90 Tagen</p>
                 </div>
 
             </div>
