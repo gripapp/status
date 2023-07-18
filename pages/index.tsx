@@ -14,12 +14,12 @@ const Home: NextPage = () => {
         <ServicesSection />
       </div >
       <div className='mt-24 mx-auto max-w-xl'>
-        <p className='text-xs text-gray-400'>
+        <div className='text-xs text-gray-400'>
           <p>&copy; T8 Lab GmbH
           <a href='https://getgrip.de/impressum' className='ml-3 text-gray-400 hover:underline'>Impressum</a>
           <a href='https://getgrip.de/datenschutz' className='ml-3 text-gray-400 hover:underline'>Datenschutz</a>
           </p>
-        </p>
+        </div>
       </div>
     </div>
   )
