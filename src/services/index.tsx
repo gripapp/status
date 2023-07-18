@@ -10,6 +10,22 @@ import { Status } from '../utils/constants';
 const ServicesSection: NextPage = () => {
     const [data, isServicesLoading] = useServices();
     const {systemStatus, isLoading} = useSystemStatus();
+    const formatDate = (date: string | undefined) => {
+        let realdate
+        if (date === undefined) {
+            realdate = new Date
+        } 
+        else {
+            realdate = new Date(date)
+        }
+		return realdate.toLocaleString('de-DE', {
+			month: "short",
+			day: "numeric",
+			hour: "numeric",
+			minute: "numeric",
+		});
+	};
+
     const Icon = () => {
         if (systemStatus?.status === Status.OPERATIONAL) {
             return <svg className="h-6 w-6 flex-none fill-sky-100 stroke-green-500 stroke-2">
@@ -33,22 +49,22 @@ const ServicesSection: NextPage = () => {
     }
 
     return (
-        <div className='mt-10'>
-            <div className="mx-px md:ml-80 md:mr-80 bg-white dark:bg-slate-800 rounded-xl card">
-                <div className="w-full flex justify-between pt-2 pl-6 pr-6 pb-2">
-                    <div className='flex items-center sm:text-xl text-xs font-semibold leading-7'>
+        <div className='mx-auto max-w-xl'>
+            <div className="bg-white shadow sm:rounded-lg">
+                <div className="w-full flex justify-between py-4 px-6">
+                    <div className='flex items-center sm:text-xl text-lg font-bold leading-7'>
                         <Icon />
                         <p className="ml-3 text-gray-900">{systemStatus?.title}</p>                        
                     </div>
                     <div>
-                        <p className="text-xs text-gray-400">Stand</p>
-                        <p className="text-xs text-gray-400 text-end ">
-                            {systemStatus?.datetime}
+                        <p className="text-xs text-gray-400 text-right">Stand</p>
+                        <p className="text-xs text-gray-700 text-end ">
+                            {formatDate(systemStatus?.datetime)}
                         </p>
                     </div>
                 </div>
             </div>
-            <div className="mx-px mt-10 md:ml-60 md:mr-60">
+            <div className="mx-px mt-10">
                 <div className="card-body">
                     {
                         isServicesLoading ? (
@@ -64,7 +80,7 @@ const ServicesSection: NextPage = () => {
                         )
                     }
                 </div>
-                <p className="mt-10 sm:text-lg	text-base font-semibold leading-7 text-gray-900">Letzte Ereignisse</p>
+                <p className="mt-10 sm:text-md	text-sm font-bold uppercase text-gray-500">Vorfälle</p>
                 <IncidentsSection />
             </div>
         </div >
