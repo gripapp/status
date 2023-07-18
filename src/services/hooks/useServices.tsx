@@ -13,7 +13,7 @@ function useServices() {
         const loadData = async () => {
             setIsLoading(true);
             try {
-                const response = await fetch("./urls.cfg");
+                const response = await fetch("/status/urls.cfg");
                 const configText = await response.text();
                 const configLines = configText.split("\n");
 
@@ -46,7 +46,7 @@ function useServices() {
 }
 
 async function logs(key: string): Promise<LogDaySummary[]> {
-    const response = await fetch(`https://raw.githubusercontent.com/gripapp/status/main/public/status/${key}_report.log`);
+    const response = await fetch(`/status/status/${key}_report.log`);
 
     const text = await response.text();
     const lines = text.split("\n");
