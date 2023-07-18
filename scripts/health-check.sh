@@ -47,7 +47,7 @@ do
     fi
     sleep 5
   done
-  dateTime=$(date +'%Y-%m-%d %H:%M')
+  dateTime=$(date -Iminutes) #$(date +'%Y-%m-%d %H:%M')
   if [[ $commit == true ]]
   then
     mkdir -p public/status
