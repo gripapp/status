@@ -47,7 +47,7 @@ do
     fi
     sleep 5
   done
-  dateTime=$(date -Iminutes) #$(date +'%Y-%m-%d %H:%MZ') # Github is using UTC time
+  dateTime=$(date +'%Y-%m-%d %H:%MZ') # Github is using UTC time
   if [[ $commit == true ]]
   then
     mkdir -p public/status
