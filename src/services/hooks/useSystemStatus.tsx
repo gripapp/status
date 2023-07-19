@@ -23,6 +23,7 @@ function useSystemStatus() {
                         continue;
                     }
                     const status = await logs(key);
+                    console.log('SystemStatus: '+status.date)
 
                     services.push(status);
                 }
