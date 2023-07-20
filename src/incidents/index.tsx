@@ -21,9 +21,9 @@ const IncidentsSection: NextPage = () => {
 				<p>Loading...</p>
 			) : (
 				<div>
-					{(monthlyIncidents as MonthlyIncident[]).map((incidents) => (
+					{(monthlyIncidents as MonthlyIncident[]).length > 0 ? (monthlyIncidents as MonthlyIncident[]).map((incidents) => (
 						<div className="mb-10" key={incidents.month}>
-							<p className="mr-5 text-2xl font-semibold leading-6 text-gray-900">{incidents.month}</p>
+							<p className="mr-5 text-2xl font-semibold leading-6 text-gray-700">{incidents.month}</p>
 							<div className="mt-2 flex-1 h-px  bg-gray-300" />
 							<div className="ml-6 border-l-4">
 								{(incidents.incidents as Incidents[]).map((incident) => (
@@ -41,7 +41,7 @@ const IncidentsSection: NextPage = () => {
 											</svg>
 										</div>
 										<div className="items-center ml-3 mt-6">
-											<p className="text-base font-semibold leading-6 text-gray-900">
+											<p className="text-base font-semibold leading-6 text-gray-700">
 												{incident.title}
 											</p>
 											{incident.status === "closed" ? (
@@ -69,7 +69,10 @@ const IncidentsSection: NextPage = () => {
 								))}
 							</div>
 						</div>
-					))}
+					))
+				:  (
+					<p className="text-base leading-6 text-gray-400">In letzter Zeit wurden keine Vorfälle gemeldet</p>
+				)}
 				</div>
 			)}
 		</div>
