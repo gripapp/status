@@ -48,7 +48,7 @@ function useSystemStatus() {
                     });
                 } else {
                     setSystemStatus({
-                        title: "Teilausfall",
+                        title: "Eingeschränkt",
                         status: Status.PARTIAL_OUTAGE,
                         datetime: services[0].date
                     });
