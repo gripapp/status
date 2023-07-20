@@ -13,7 +13,7 @@ const ServicesSection: NextPage = () => {
     const formatDate = (date: string | undefined) => {
         let realdate
         if (date === undefined) {
-            realdate = new Date
+            return('-')
         } 
         else {
             realdate = new Date(date)
