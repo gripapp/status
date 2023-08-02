@@ -64,6 +64,7 @@ then
   echo "committing logs"
   git config --global user.name 'gripstatus'
   git config --global user.email 'gripstatus@getgrip.de'
+  git pull
   git add -A --force public/status/
   git commit -am '[Automated] Update Health Check Logs'
   git push
