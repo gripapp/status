@@ -3,10 +3,10 @@
 const production = process.env.NODE_ENV === "production";
 
 const nextConfig = {
-  assetPrefix: production ? '/status' : '',
+  assetPrefix: production ? '/' : '',
   reactStrictMode: true,
   swcMinify: true,
-  basePath: '/status',
+  basePath: '/',
 }
 
 module.exports = nextConfig

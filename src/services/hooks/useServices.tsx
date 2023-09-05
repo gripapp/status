@@ -13,7 +13,7 @@ function useServices() {
         const loadData = async () => {
             setIsLoading(true);
             try {
-                const response = await fetch("/status/urls.cfg");
+                const response = await fetch("/urls.cfg");
                 const configText = await response.text();
                 const configLines = configText.split("\n");
 

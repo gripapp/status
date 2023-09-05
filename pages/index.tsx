@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <div className='bg-slate-50 h-full w-full'>
       <div className=" py-12">
-        <a href='https://getgrip.de'><img src="/status/GRIP.png" alt='GRIP' className="h-10 mx-auto" /></a>
+        <a href='https://getgrip.de'><img src="/GRIP.png" alt='GRIP' className="h-10 mx-auto" /></a>
       </div>
 
       <div>
